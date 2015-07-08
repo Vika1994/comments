@@ -1,0 +1,6 @@
+<?php if ($this->identity):?>
+<p>Ви вже залогінились під іменем <?php echo $this->identity->username;?></p>
+<?php else: ?>
+<p><?php echo $this->error;?></p>
+<?php echo $this->form;//форма логування?>
+<?php endif;?>

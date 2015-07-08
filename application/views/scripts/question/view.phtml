@@ -1,0 +1,23 @@
+<?php
+/*
+ * опис питання і його автор
+ * список коментарів
+ * форма додавання нового коментаря зареєстрованим юзерам
+ */
+?>
+<h2><?php echo $this->question->title;?>- <?php echo $this->author->username;?></h2>
+<p><?php echo $this->question->description;?></p>
+
+<?php if(count($this->answers)>0):?>
+        <?php foreach ($this->answers as $answer):?>
+            <p><?php echo $answer->answer;?></p>
+        <?php endforeach;?>
+    <?php else:?>
+        <p> Відповідей не це питання ще немає</p>
+<?php endif; ?>
+
+<?php if($this->identity):?>
+        <?php echo $this->form; ?>
+    <?php else: ?>
+        <p>'Щоб залишити вдповідь Вам необхідно зареєструватися.</p>
+<?php endif; ?>
